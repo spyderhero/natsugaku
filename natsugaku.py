@@ -39,8 +39,8 @@ with col1:
 with col2:
     st.image("(sim1,2)h+.png", caption="図3.3: $h_+$の球面調和関数展開 $l=2, m=2$のSim1 とSim2 の比較", use_container_width=True)
 
-st.write("Sim1とSim2の結果から，合体時刻に差が生まれていること，また振幅には違いが生まれていないことがわかる．特に$h_+$ に関して，重力波の周波数の上昇が早まっていることが確認できる．")
-st.write("最後にエネルギー放出率の時間発展を見る．")
+st.write("Sim1とSim2の結果から，振幅には違いが生まれておらず，EMD理論の方がEM理論に比べて合体が早いことがわかる．")
+st.write("この原因を考察するために，最後にエネルギー放出率の時間発展を見る．")
 
 col1, col2, col3 = st.columns(3)
 
@@ -53,4 +53,17 @@ with col2:
 with col3:
     st.image("(sim1,2)phi-energy.png", caption="図4.3: スカラー場のエネルギー放出率のSim1 とSim2 の比較", use_container_width=True)
 
-st.write("重力波，電磁場のエネルギー放出率はSim1 とSim2 では大きさに違いがなく，ピークとなる時刻のみに違いがある．")
+st.write("重力波，電磁場のエネルギー放出率はSim1 とSim2 では大きさに違いがなく，ピークとなる時刻のみに違いがある．これは合体までの時間に差が生まれたことによるものだと考えられる．一方でスカラー場のエネルギー放出はSim1 では存在せず，Sim2 では存在する．このことを統合すると，Sim2 の方はスカラー場からのエネルギー放出により，運動量が大きくなることで連星軌道の収縮が早くなったと考えられる．")
+
+
+st.subheader("5.3　Sim3とSim4の比較")
+st.write("Sim3とSim4の連星合体の軌道は以下のようになった．")
+
+col1, col2 = st.columns(2)
+with col1:
+    st.image("(Sim3-EM)TP1+2_trajectorys.png", caption="図5.1: EM理論におけるブラックホール連星軌道", use_container_width=True)
+
+with col2:
+    st.image("(Sim4-EMD)TP1+2_trajectorys.png", caption="図5.2: EMD理論におけるブラックホール連星軌道", use_container_width=True)
+
+st.write("EM，EMDともに合体せず，片方のブラックホールが吹き飛んでしまう結果となった．これは，初期条件の設定方法に課題があると考えられ引き続き調査が必要である．")
